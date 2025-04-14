@@ -10,7 +10,7 @@ void My_HAL_GPIO_Init(GPIO_TypeDef  *GPIOx, GPIO_InitTypeDef *GPIO_Init)
         GPIOx->OSPEEDR &=~(GPIO_OSPEEDR_OSPEEDR0);
         GPIOx->PUPDR |=(GPIO_PUPDR_PUPDR0_1);
     }
-    if (GPIOx = GPIOC)
+    if (GPIOx == GPIOC)
     {
         GPIOx->MODER |=(GPIO_MODER_MODER7_0 | GPIO_MODER_MODER6_0|GPIO_MODER_MODER8_0 | GPIO_MODER_MODER9_0);
     }
