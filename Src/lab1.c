@@ -11,8 +11,8 @@ int lab1_main(void){
     GPIO_InitTypeDef initStr = {GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_8 | GPIO_PIN_9, GPIO_MODE_OUTPUT_PP, GPIO_SPEED_FREQ_LOW, GPIO_NOPULL};
 
     GPIOA->PUPDR |= (0x2 << 2); //set PA1 to be input with pulldown resistor
-    GPIOA->PUPDR |= (0x2 << 4); //set PA2 to be input with pulldown resistor
-    GPIOA->PUPDR |= (0x2 << 6); //set PA3 to be input with pulldown resistor
+    GPIOA->PUPDR |= (0x2 << 18); //set PA9 to be input with pulldown resistor
+    GPIOA->PUPDR |= (0x2 << 20); //set PA10 to be input with pulldown resistor
     GPIOA->PUPDR |= (0x2 << 8); //set PA4 to be input with pulldown resistor
 
 
@@ -25,13 +25,13 @@ int lab1_main(void){
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, GPIO_PIN_RESET);
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, GPIO_PIN_RESET);
         }
-        if (GPIOA->IDR & GPIO_IDR_2){
+        if (GPIOA->IDR & GPIO_IDR_9){
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, GPIO_PIN_RESET);
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, GPIO_PIN_RESET);
         }
-        if (GPIOA->IDR & GPIO_IDR_3){
+        if (GPIOA->IDR & GPIO_IDR_10){
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, GPIO_PIN_SET);
