@@ -17,7 +17,7 @@ int lab1_main(void){
 
 
     My_HAL_GPIO_Init(GPIOC, &initStr); 
-
+    My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
     while(1){
         if (GPIOA->IDR & GPIO_IDR_1){
             My_HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
